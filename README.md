@@ -38,7 +38,8 @@ se ela mudar, esses três arquivos precisam ser refeitos.
 | Ainda pendente | Onde ajustar | Como o site se comporta agora |
 | --- | --- | --- |
 | Aviso de cada solicitação por e-mail | No painel do Netlify (passo 2 abaixo) | As solicitações ficam guardadas em *Forms*, mas ninguém é avisado. O e-mail fica fora do código para não ficar exposto no navegador. |
-| Domínio | `site/index.html`, comentário no `<head>` | A imagem de compartilhamento precisa do endereço completo para aparecer no WhatsApp e nas redes. |
+| Site aberto ao público | Netlify → configurações do projeto → acesso de visitantes (*Visitor access*) | A proteção do time está ligada: quem abre o link vê “This site is private” e só membros do time do Netlify, conectados, veem a página. |
+| Domínio | Netlify → *Domain management* e as três linhas de endereço no `<head>` do `site/index.html` | O site funciona em https://darling-griffin-170881.netlify.app. Com domínio próprio, troque esse endereço nas três linhas. |
 | Condição de Black Friday | `site/assets/js/config.js` → `avisoTopo` | Aviso no topo pronto e desligado; nenhuma condição foi inventada. |
 
 ## Publicação: GitHub + Netlify
@@ -60,8 +61,9 @@ mudar um pouco no painel do Netlify.
    Clique também em cada botão de WhatsApp.
 4. **Domínio próprio (opcional, recomendado):** registre o domínio (para `.com.br`, no registro.br) e
    adicione-o no Netlify, em *Domain management*, seguindo as instruções de DNS. O HTTPS é automático.
-5. **Compartilhamento:** no `<head>` do `site/index.html`, troque o endereço da imagem de compartilhamento
-   pelo endereço completo (do domínio ou do `.netlify.app`) e acrescente `canonical` e `og:url`.
+5. **Compartilhamento:** o `<head>` do `site/index.html` usa o endereço completo do site em três linhas
+   (`canonical`, `og:url` e `og:image`), hoje com `https://darling-griffin-170881.netlify.app`. Com domínio
+   próprio, troque o endereço nessas três linhas.
 
 A detecção de formulários já está ativada no projeto. Documentação: https://docs.netlify.com/manage/forms/setup
 
@@ -132,7 +134,9 @@ O servidor de revisão (`node .claude/servidor-local.mjs`) não envia nada de ve
 - [x] Criar a conta no Netlify e enviar a primeira versão.
 - [x] Preencher o WhatsApp e ligar o formulário ao Netlify.
 - [x] Guardar o código no repositório privado do GitHub.
-- [ ] Ligar o repositório ao projeto no Netlify e testar cada botão de WhatsApp no site publicado.
+- [x] Ligar o repositório ao projeto no Netlify.
+- [x] Usar o endereço completo do site na imagem de compartilhamento, no `canonical` e no `og:url`.
+- [ ] Desligar a proteção do time no Netlify e testar cada botão de WhatsApp no site publicado.
 - [ ] Cadastrar o aviso por e-mail e confirmar que o envio de teste chegou.
-- [ ] Definir o domínio: endereço completo da imagem de compartilhamento, `canonical` e `og:url`.
+- [ ] Registrar o domínio próprio e trocar o endereço nas três linhas do `<head>`.
 - [ ] Compartilhar o link no WhatsApp e conferir a pré-visualização.
