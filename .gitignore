@@ -1,0 +1,10 @@
+# Arquivos do sistema e de editores
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
+
+# Configurações locais do Claude Code e do Netlify CLI (não vão para o repositório)
+.claude/settings.local.json
+.netlify/

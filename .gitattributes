@@ -1,0 +1,5 @@
+# Padroniza as quebras de linha dos arquivos de texto; imagens ficam intactas.
+* text=auto
+*.webp binary
+*.jpg binary
+*.png binary

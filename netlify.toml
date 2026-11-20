@@ -1,0 +1,3 @@
+# Configuração do Netlify: o que vai para o ar é a pasta "site", sem etapa de build.
+[build]
+  publish = "site"
