@@ -34,10 +34,11 @@ se ela mudar, esses três arquivos precisam ser refeitos.
   pacotes abrem a conversa com uma mensagem pronta, que pode ser editada em `mensagensWhatsApp`.
 - **Formulário:** `formulario.endpoint` está em `"netlify"`. As solicitações aparecem no painel do Netlify,
   em *Forms*, no formulário “avaliacao”.
+- **Aviso por e-mail:** cadastrado no painel do Netlify. Cada solicitação gera um e-mail “Novo pedido de avaliação”.
+  O endereço fica só no painel, fora do código, para não ficar exposto no navegador.
 
 | Ainda pendente | Onde ajustar | Como o site se comporta agora |
 | --- | --- | --- |
-| Aviso de cada solicitação por e-mail | No painel do Netlify (passo 2 abaixo) | As solicitações ficam guardadas em *Forms*, mas ninguém é avisado. O e-mail fica fora do código para não ficar exposto no navegador. |
 | Publicação automática | Netlify → *User settings* → conectar a conta do GitHub (magnirostris) | O Netlify bloqueia as atualizações enviadas ao GitHub (“Unrecognized Git contributor”), porque a conta dele, criada com o Google, não está ligada ao GitHub. Depois de conectar, um novo envio (ou *Retry deploy*) publica o que ficou pendente. |
 | Domínio | Netlify → *Domain management* e as três linhas de endereço no `<head>` do `site/index.html` | O site funciona em https://darling-griffin-170881.netlify.app. Com domínio próprio, troque esse endereço nas três linhas. |
 | Condição de Black Friday | `site/assets/js/config.js` → `avisoTopo` | Aviso no topo pronto e desligado; nenhuma condição foi inventada. |
@@ -138,6 +139,6 @@ O servidor de revisão (`node .claude/servidor-local.mjs`) não envia nada de ve
 - [x] Usar o endereço completo do site na imagem de compartilhamento, no `canonical` e no `og:url`.
 - [x] Abrir o site ao público (as versões de teste continuam protegidas) e testar os botões de WhatsApp e o formulário.
 - [ ] Conectar o GitHub à conta do Netlify para liberar a publicação automática.
-- [ ] Cadastrar o aviso por e-mail e confirmar que o envio de teste chegou.
+- [x] Cadastrar o aviso por e-mail e confirmar que o envio de teste chegou.
 - [ ] Registrar o domínio próprio e trocar o endereço nas três linhas do `<head>`.
 - [ ] Compartilhar o link no WhatsApp e conferir a pré-visualização.
