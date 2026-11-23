@@ -39,9 +39,9 @@ se ela mudar, esses três arquivos precisam ser refeitos.
 
 | Ainda pendente | Onde ajustar | Como o site se comporta agora |
 | --- | --- | --- |
-| Publicação automática | Netlify → *User settings* → conectar a conta do GitHub (magnirostris) | O Netlify bloqueia as atualizações enviadas ao GitHub (“Unrecognized Git contributor”), porque a conta dele, criada com o Google, não está ligada ao GitHub. Depois de conectar, um novo envio (ou *Retry deploy*) publica o que ficou pendente. |
-| Domínio | Netlify → *Domain management* e as três linhas de endereço no `<head>` do `site/index.html` | O site funciona em https://darling-griffin-170881.netlify.app. Com domínio próprio, troque esse endereço nas três linhas. |
-| Fim da oferta de Black Friday | `site/index.html`, pacote Presença Digital | A oferta (R$ 1.470 por R$ 980) fica numa faixa amarela abaixo do preço, com o preço antigo riscado, e não tem data para acabar. Para encerrar, apague o parágrafo `class="offer"` e o `price__value--old` (há um comentário no código). |
+| Fim da oferta de Black Friday | `site/index.html`, pacote Presença Digital | A faixa amarela do topo some sozinha depois de 30/11 (`avisoTopo.ate` em `config.js`). A faixa dentro do pacote (R$ 1.470 por R$ 980, com o preço antigo riscado) não tem data para acabar: para encerrar, apague o parágrafo `class="offer"` e o `price__value--old` (há um comentário no código). |
+
+O site abre em https://www.monkberry.com.br (o endereço sem `www` e o `monkberry.netlify.app` também funcionam).
 
 ## Publicação: GitHub + Netlify
 
@@ -63,8 +63,8 @@ mudar um pouco no painel do Netlify.
 4. **Domínio próprio (opcional, recomendado):** registre o domínio (para `.com.br`, no registro.br) e
    adicione-o no Netlify, em *Domain management*, seguindo as instruções de DNS. O HTTPS é automático.
 5. **Compartilhamento:** o `<head>` do `site/index.html` usa o endereço completo do site em três linhas
-   (`canonical`, `og:url` e `og:image`), hoje com `https://darling-griffin-170881.netlify.app`. Com domínio
-   próprio, troque o endereço nessas três linhas.
+   (`canonical`, `og:url` e `og:image`), hoje com `https://www.monkberry.com.br`. Se o domínio
+   mudar, troque o endereço nessas três linhas.
 
 A detecção de formulários já está ativada no projeto. Documentação: https://docs.netlify.com/manage/forms/setup
 
@@ -94,10 +94,11 @@ em `formulario.endpoint` o endereço `https://...` que eles fornecerem. O site e
 Em qualquer modo, a confirmação “Solicitação recebida!” só aparece quando o serviço responde com sucesso.
 Em caso de falha, a pessoa vê uma mensagem de erro e os dados continuam preenchidos.
 
-## Aviso no topo (opcional)
+## Aviso no topo
 
-Hoje a oferta de Black Friday fica no pacote, não no topo, e o aviso está desligado. Para usar a faixa azul
-acima do menu em outra campanha, preencha `avisoTopo` em `site/assets/js/config.js`:
+Hoje a faixa amarela da Black Friday está ligada (“Black Friday: seu negócio com presença digital em oferta
+até 30/11.”, com o botão “Ver oferta” que leva ao pacote Presença Digital) e some sozinha depois de 30/11.
+Para mudar o texto ou usar a faixa em outra campanha, edite `avisoTopo` em `site/assets/js/config.js`:
 
 ```js
 avisoTopo: {
@@ -109,8 +110,8 @@ avisoTopo: {
 },
 ```
 
-O aviso aparece numa faixa azul acima do menu, no computador e no celular. Com `ativo: false`
-(o padrão), nada aparece.
+O aviso aparece numa faixa amarela acima do menu, no computador e no celular. Com `ativo: false`,
+nada aparece.
 
 ## Seção “Trabalhos e resultados” (oculta)
 
@@ -139,7 +140,7 @@ O servidor de revisão (`node .claude/servidor-local.mjs`) não envia nada de ve
 - [x] Ligar o repositório ao projeto no Netlify.
 - [x] Usar o endereço completo do site na imagem de compartilhamento, no `canonical` e no `og:url`.
 - [x] Abrir o site ao público (as versões de teste continuam protegidas) e testar os botões de WhatsApp e o formulário.
-- [ ] Conectar o GitHub à conta do Netlify para liberar a publicação automática.
+- [x] Conectar o GitHub à conta do Netlify para liberar a publicação automática.
 - [x] Cadastrar o aviso por e-mail e confirmar que o envio de teste chegou.
-- [ ] Registrar o domínio próprio e trocar o endereço nas três linhas do `<head>`.
+- [x] Registrar o domínio próprio (monkberry.com.br) e trocar o endereço nas três linhas do `<head>`.
 - [ ] Compartilhar o link no WhatsApp e conferir a pré-visualização.
