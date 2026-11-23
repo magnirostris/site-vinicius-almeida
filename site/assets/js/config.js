@@ -19,8 +19,8 @@ window.SITE_CONFIG = {
   /* Mensagens que já aparecem escritas quando a conversa abre no WhatsApp. */
   mensagensWhatsApp: {
     contato: "Olá, Vinicius! Vim pelo site e gostaria de conversar sobre o meu negócio.",
-    presenca: "Olá, Vinicius! Quero organizar minha presença digital com o pacote Presença Digital.",
-    marketing: "Olá, Vinicius! Quero planejar minha divulgação com o pacote Marketing em Ação.",
+    presenca: "Olá, Vinicius! Quero organizar a presença digital do meu negócio.",
+    marketing: "Olá, Vinicius! Quero planejar a divulgação do meu negócio.",
     sobMedida: "Olá, Vinicius! Quero conversar sobre um projeto sob medida para a minha empresa.",
     avaliacao: "Olá, Vinicius! Quero solicitar a avaliação gratuita da presença digital do meu negócio.",
   },
