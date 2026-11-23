@@ -41,7 +41,7 @@ se ela mudar, esses três arquivos precisam ser refeitos.
 | --- | --- | --- |
 | Publicação automática | Netlify → *User settings* → conectar a conta do GitHub (magnirostris) | O Netlify bloqueia as atualizações enviadas ao GitHub (“Unrecognized Git contributor”), porque a conta dele, criada com o Google, não está ligada ao GitHub. Depois de conectar, um novo envio (ou *Retry deploy*) publica o que ficou pendente. |
 | Domínio | Netlify → *Domain management* e as três linhas de endereço no `<head>` do `site/index.html` | O site funciona em https://darling-griffin-170881.netlify.app. Com domínio próprio, troque esse endereço nas três linhas. |
-| Condição de Black Friday | `site/assets/js/config.js` → `avisoTopo` | Aviso no topo pronto e desligado; nenhuma condição foi inventada. |
+| Fim da oferta de Black Friday | `site/index.html`, pacote Presença Digital | A oferta (R$ 1.470 por R$ 980) fica numa faixa amarela abaixo do preço, com o preço antigo riscado, e não tem data para acabar. Para encerrar, apague o parágrafo `class="offer"` e o `price__value--old` (há um comentário no código). |
 
 ## Publicação: GitHub + Netlify
 
@@ -94,14 +94,15 @@ em `formulario.endpoint` o endereço `https://...` que eles fornecerem. O site e
 Em qualquer modo, a confirmação “Solicitação recebida!” só aparece quando o serviço responde com sucesso.
 Em caso de falha, a pessoa vê uma mensagem de erro e os dados continuam preenchidos.
 
-## Aviso no topo (Black Friday)
+## Aviso no topo (opcional)
 
-Quando a condição de Black Friday estiver definida, preencha `avisoTopo` em `site/assets/js/config.js`:
+Hoje a oferta de Black Friday fica no pacote, não no topo, e o aviso está desligado. Para usar a faixa azul
+acima do menu em outra campanha, preencha `avisoTopo` em `site/assets/js/config.js`:
 
 ```js
 avisoTopo: {
   ativo: true,
-  texto: "Escreva aqui a condição de Black Friday.",
+  texto: "Escreva aqui a condição da campanha.",
   textoLink: "Ver os pacotes",   // opcional
   link: "#pacotes",              // "#pacotes", "#avaliacao", "whatsapp" ou um endereço https://
   ate: "2026-11-30",             // opcional: depois desse dia, o aviso some sozinho

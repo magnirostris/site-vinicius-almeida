@@ -11,6 +11,7 @@
   --accent-strong: #1A65F5;   /* botões com texto branco e detalhes pequenos sobre fundo claro */
   --accent-deep: #1551C4;     /* hover dos botões */
   --accent-soft: #6A9BF8;     /* ícones, detalhes pequenos e contorno de foco sobre o grafite (5,2:1) */
+  --yellow: #FFC72C;          /* destaque da oferta de Black Friday (13:1 com o texto escuro) */
   --ink: #1B1B1B;
   --ink-soft: #474747;
   --muted: #5E5E5E;
@@ -603,6 +604,29 @@ strong { font-weight: 700; }
   font-weight: 700;
   letter-spacing: -0.03em;
 }
+/* Preço antigo, riscado durante a oferta */
+.price__value--old {
+  color: var(--on-dark-soft);
+  text-decoration: line-through;
+  text-decoration-thickness: 3px;
+  text-decoration-color: var(--yellow);
+}
+
+/* Faixa amarela da oferta, logo abaixo da linha do preço */
+.offer {
+  margin-top: 10px;
+  padding: 12px 16px;
+  border-radius: 16px;
+  background: var(--yellow);
+  color: var(--ink);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-wrap: pretty;
+}
+.offer strong { font-weight: 800; }
+.offer__new { white-space: nowrap; }
+
 .price__unit {
   color: var(--on-dark-soft);
   font-size: 1.0625rem;
