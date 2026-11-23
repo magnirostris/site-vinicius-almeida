@@ -34,10 +34,10 @@ window.SITE_CONFIG = {
    *   ate:       último dia do aviso, no formato AAAA-MM-DD (opcional). Depois dele, o aviso some sozinho.
    */
   avisoTopo: {
-    ativo: false,
-    texto: "",
-    textoLink: "",
-    link: "",
+    ativo: true,
+    texto: "Black Friday: seu negócio com presença digital de R$ 1.470 por R$ 980.",
+    textoLink: "Ver o pacote",
+    link: "#pacotes",
     ate: "",
   },
 
