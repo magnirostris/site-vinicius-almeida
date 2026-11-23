@@ -14,7 +14,7 @@ window.SITE_CONFIG = {
    * Se o número ficar vazio ou inválido, nenhum link de WhatsApp é gerado:
    * os botões apenas avisam que o contato está em configuração.
    */
-  whatsapp: "(82) 99957-8345",
+  whatsapp: "(82) 99831-6257",
 
   /* Mensagens que já aparecem escritas quando a conversa abre no WhatsApp. */
   mensagensWhatsApp: {
@@ -34,11 +34,11 @@ window.SITE_CONFIG = {
    *   ate:       último dia do aviso, no formato AAAA-MM-DD (opcional). Depois dele, o aviso some sozinho.
    */
   avisoTopo: {
-    ativo: false,
-    texto: "",
-    textoLink: "",
-    link: "",
-    ate: "",
+    ativo: true,
+    texto: "Black Friday: seu negócio com presença digital em oferta até 30/11.",
+    textoLink: "Ver oferta",
+    link: "#presenca",
+    ate: "2026-11-30",
   },
 
   /*
