@@ -1,4 +1,4 @@
-# Site — Vinicius Almeida · Design e marketing
+# Site — Vinicius Almeida · IA e marketing
 
 Página única, sem etapa de build. Tudo o que vai para o ar está na pasta `site/`.
 

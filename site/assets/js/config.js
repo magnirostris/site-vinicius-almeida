@@ -1,7 +1,7 @@
 /*
  * ============================================================
  *  CONFIGURAÇÃO DO SITE — edite somente este arquivo
- *  Vinicius Almeida · Design e marketing
+ *  Vinicius Almeida · IA e marketing
  * ============================================================
  *
  * Tudo aqui fica visível para quem abrir o código da página.

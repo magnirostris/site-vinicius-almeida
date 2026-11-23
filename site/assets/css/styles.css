@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Vinicius Almeida · Design e marketing
+   Vinicius Almeida · IA e marketing
    Folha de estilos única: tokens → base → componentes → seções.
    ========================================================================== */
 
@@ -410,7 +410,6 @@ strong { font-weight: 700; }
   letter-spacing: -0.035em;
   text-wrap: balance;
 }
-.hero__title .hl { white-space: nowrap; }
 
 .hero__grid {
   display: grid;
@@ -648,8 +647,6 @@ strong { font-weight: 700; }
 .packages__footnote .icon { width: 22px; height: 22px; margin-top: 3px; color: var(--accent); }
 
 /* ---------- 3. Avaliação gratuita ---------- */
-.evaluation { margin-top: var(--inset); }
-
 .evaluation__layout {
   display: grid;
   gap: clamp(32px, 5vw, 48px);
@@ -816,8 +813,105 @@ strong { font-weight: 700; }
 }
 .form-success p:last-child { max-width: 34ch; color: var(--ink-soft); }
 
-/* ---------- 4. Soluções sob medida ---------- */
+/* ---------- 3. Soluções sob medida ---------- */
 .custom { padding-bottom: clamp(40px, 5vw, 64px); }
+
+/* Bloco em destaque: tecnologia e IA */
+.tech {
+  --focus: var(--accent-soft);
+  display: grid;
+  gap: clamp(28px, 4vw, 44px);
+  padding: clamp(24px, 4vw, 56px);
+  border-radius: var(--radius-block);
+  background: var(--graphite);
+  color: var(--on-dark);
+}
+
+.tech__head { display: grid; gap: 16px; max-width: 46rem; }
+
+.tech__title {
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.tech__desc {
+  max-width: 52ch;
+  color: var(--on-dark-soft);
+  font-size: var(--fs-lead);
+  text-wrap: pretty;
+}
+
+.tech__cards { display: grid; gap: 16px; }
+
+@media (min-width: 880px) {
+  .tech__cards { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+}
+
+.tech-card {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+  padding: clamp(22px, 2.4vw, 30px);
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: var(--radius-card);
+  background: var(--graphite-2);
+}
+
+.tech-card__icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+}
+.tech-card__icon .icon { width: 24px; height: 24px; }
+
+.tech-card__title {
+  margin: 0;
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.tech-card__text { color: var(--on-dark-soft); line-height: 1.55; }
+
+.tech__ai {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 64ch;
+  color: var(--on-dark-soft);
+}
+.tech__ai .icon { flex: none; width: 22px; height: 22px; margin-top: 3px; color: var(--accent-soft); }
+
+/* Lista complementar de design e marketing: hierarquia secundária */
+.custom__more {
+  display: grid;
+  justify-items: center;
+  gap: 16px;
+  margin-top: clamp(36px, 5vw, 56px);
+}
+
+.custom__more-label {
+  color: var(--muted);
+  font-size: .8125rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.custom__more .chips li {
+  padding: 9px 18px 9px 14px;
+  font-size: .9375rem;
+}
+.custom__more .chips li::before { width: 14px; height: 14px; }
 
 .chips {
   display: flex;
@@ -992,6 +1086,10 @@ strong { font-weight: 700; }
 }
 .faq-item[open] { border-color: var(--mist); background: var(--mist); }
 
+/* A seção fica sobre fundo cinza: os itens seguem brancos e o aberto ganha contorno azul. */
+.faq.section--mist .faq-item { border-color: transparent; }
+.faq.section--mist .faq-item[open] { border-color: var(--accent); background: #fff; }
+
 .faq-item summary {
   display: flex;
   align-items: center;
@@ -1040,6 +1138,9 @@ strong { font-weight: 700; }
 .faq-item__body p { max-width: 62ch; }
 
 /* ---------- 8. Contato final + rodapé ---------- */
+/* Dois blocos com cantos arredondados em sequência (Dúvidas e Contato) precisam de uma folga entre eles. */
+.faq + .cta-final { margin-top: var(--inset); }
+
 .cta-final {
   padding-bottom: clamp(56px, 7vw, 96px);
   border-bottom-right-radius: 0;
