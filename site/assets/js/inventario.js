@@ -44,7 +44,16 @@
       [24, "Pratos fundos Porto Brasil Bio Breeze 22,5cm"], [24, "Pratos rasos Porto Brasil Bio Titanium 27,5cm"] ] }
   ];
 
-  var CHAVE = "monkberry-inventario-v1";
+  // Página /comprador: o "Freezer conversível" (qtd 2) vira dois itens de qtd 1.
+  var COMPRADOR = document.body.dataset.pagina === "comprador";
+  function expandir(i) {
+    if (COMPRADOR && i[1] === "Freezer conversível") {
+      return [[1, "Freezer conversível 1"], [1, "Freezer conversível 2"]];
+    }
+    return [i];
+  }
+
+  var CHAVE = COMPRADOR ? "monkberry-comprador-v1" : "monkberry-inventario-v1";
   var brl = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
   var tbody = document.querySelector("#inventario tbody");
   var linhas = [];
@@ -152,10 +161,10 @@
     if (s.grupos) {
       s.grupos.forEach(function (g) {
         cabecalho(g.titulo, "inv-sub");
-        g.itens.forEach(function (i) { item(i[0], i[1]); });
+        g.itens.forEach(function (i) { expandir(i).forEach(function (j) { item(j[0], j[1]); }); });
       });
     } else {
-      s.itens.forEach(function (i) { item(i[0], i[1]); });
+      s.itens.forEach(function (i) { expandir(i).forEach(function (j) { item(j[0], j[1]); }); });
     }
   });
 

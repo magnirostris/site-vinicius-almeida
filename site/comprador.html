@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comprador | Monkberry Studio</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400..800&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/inventario.css">
+  <script src="assets/js/inventario.js" defer></script>
+</head>
+<body class="inv-page" data-pagina="comprador">
+  <header class="inv-header">
+    <a class="brand" href="./">
+      <img class="brand__mark" src="assets/img/logo-m.svg" alt="" width="208" height="140">
+      <span class="brand__name">Monkberry Studio</span>
+    </a>
+  </header>
+
+  <main class="inv-main">
+    <h1 class="inv-title">Comprador</h1>
+    <p class="inv-lead">Marque os itens e digite o preço (em R$) de cada um. O total é somado automaticamente.</p>
+
+    <div class="inv-table-wrap">
+      <table class="inv-table" id="inventario">
+        <thead>
+          <tr>
+            <th scope="col" class="c-check"><span class="sr-only">Marcar</span></th>
+            <th scope="col" class="c-qtd">Qtd</th>
+            <th scope="col">Item</th>
+            <th scope="col" class="c-preco">Preço</th>
+          </tr>
+          <tr class="inv-total inv-total--top">
+            <th scope="row" colspan="3">Total <span class="inv-sel">(marcados: <span data-sel>R$ 0,00</span>)</span></th>
+            <td class="c-preco" data-total>R$ 0,00</td>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr class="inv-total inv-total--bottom">
+            <th scope="row" colspan="3">Total <span class="inv-sel">(marcados: <span data-sel>R$ 0,00</span>)</span></th>
+            <td class="c-preco" data-total>R$ 0,00</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <p class="inv-actions"><button type="button" class="btn btn--outline btn--sm" id="limpar">Limpar marcações e preços</button></p>
+  </main>
+</body>
+</html>
