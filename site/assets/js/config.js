@@ -16,6 +16,9 @@ window.SITE_CONFIG = {
    */
   whatsapp: "(82) 99831-6257",
 
+  /* E-mail de contato exibido na seção final (link "mailto:"). Vazio = o e-mail não aparece. */
+  email: "monkberry.design@gmail.com",
+
   /* Mensagens que já aparecem escritas quando a conversa abre no WhatsApp. */
   mensagensWhatsApp: {
     contato: "Olá, Vinicius! Vim pelo site e gostaria de conversar sobre o meu negócio.",

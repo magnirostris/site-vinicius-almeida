@@ -79,6 +79,23 @@
 
   if (!waReady) console.info('[site] WhatsApp ainda não configurado em assets/js/config.js.');
 
+  /* ---------- Contatos exibidos (lidos de config.js) ---------- */
+  $$('[data-whatsapp-numero]').forEach((el) => {
+    if (waReady) el.firstChild.textContent = formatPhone(waNumber);
+    else el.closest('li')?.setAttribute('hidden', '');
+  });
+
+  const mailAddress = String(cfg.email || '').trim();
+  const validMail = /^[^\s@<>"']+@[^\s@<>"']+\.[^\s@<>"']+$/.test(mailAddress);
+  $$('[data-email]').forEach((el) => {
+    if (validMail) {
+      el.href = `mailto:${mailAddress}`;
+      el.textContent = mailAddress;
+    } else {
+      el.closest('li')?.setAttribute('hidden', '');
+    }
+  });
+
   /* ---------- Aviso no topo (ex.: Black Friday) ---------- */
   const topCfg = cfg.avisoTopo || {};
   const topBar = $('#aviso-topo');

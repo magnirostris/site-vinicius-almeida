@@ -1180,6 +1180,20 @@ strong { font-weight: 700; }
 .cta-final .section-title { max-width: 16em; }
 .cta-final .btn { justify-self: start; }
 
+.cta-final__action { display: grid; gap: 24px; justify-items: start; }
+.contact-list { display: grid; gap: 4px; }
+.contact-list li { display: flex; align-items: center; gap: 12px; color: var(--on-dark-soft); }
+.contact-list .icon { color: var(--accent-soft); }
+.contact-list a {
+  padding-block: 6px;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.contact-list a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
 @media (min-width: 900px) {
   .cta-final__layout {
     grid-template-columns: minmax(0, 1fr) auto;
