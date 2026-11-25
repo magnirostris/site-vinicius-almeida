@@ -16,6 +16,14 @@ window.SITE_CONFIG = {
    */
   whatsapp: "(82) 99831-6257",
 
+  /*
+   * Google Analytics 4: ID de métricas (começa com "G-"). Não é segredo.
+   * Vazio = nada é medido. Em localhost a medição fica sempre desligada.
+   */
+  analytics: {
+    id: "G-KR2CB3DBYP",
+  },
+
   /* E-mail de contato exibido na seção final (link "mailto:"). Vazio = o e-mail não aparece. */
   email: "monkberry.design@gmail.com",
 

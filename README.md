@@ -113,6 +113,14 @@ avisoTopo: {
 O aviso aparece numa faixa amarela acima do menu, no computador e no celular. Com `ativo: false`,
 nada aparece.
 
+## Google Analytics
+
+O ID de métricas (`G-...`) fica em `site/assets/js/config.js` → `analytics.id`; o código está em
+`site/assets/js/analytics.js`. Sem aviso de cookies: a medição liga para todos os visitantes. Em localhost
+nada é enviado. Eventos medidos, sem dado pessoal: `click_whatsapp` (com o botão e a seção), `click_email` e
+`generate_lead` (envio do formulário de avaliação). No Analytics, marque `generate_lead` e `click_whatsapp`
+como eventos-chave (conversões) em *Admin → Eventos*. Para desligar, deixe `analytics.id` vazio.
+
 ## Seção “Trabalhos e resultados” (oculta)
 
 A seção já está pronta no `site/index.html`, com os projetos previstos (Dalice, Kareuóka e Estela Geromini),

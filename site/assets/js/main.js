@@ -319,6 +319,7 @@
         success.hidden = false;
         success.scrollIntoView({ block: 'center', behavior: scrollBehavior() });
         success.focus({ preventScroll: true });
+        document.dispatchEvent(new CustomEvent('avaliacao:enviada')); // medição (analytics.js); não leva dados do formulário
       } catch (error) {
         console.error('[site]', error);
         showStatus(`Não foi possível enviar sua solicitação agora. Verifique sua conexão e tente novamente.${
